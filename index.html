@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f6f52" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>RumindVisuals</title>
+</head>
+
+<body>
+    <main>
+        <section id="items">
+            <!-- Mode -->
+            <button id="mode" class="item info-settings dark-mode">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="icon">
+                    <path opacity="1"
+                        d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon">
+                    <path opacity="1"
+                        d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" />
+                </svg>
+            </button>
+            <!-- Languages -->
+            <div class="item info-settings langs">
+                <p>EN</p>
+                <div id="languages">
+                    <p>ES</p>
+                    <span>|</span>
+                    <p>EN</p>
+                    <span>|</span>
+                    <p>RU</p>
+                    <span>|</span>
+                    <p>PT</p>
+                </div>
+            </div>
+            <!-- Date -->
+            <div class="item info-settings date">
+                <div></div>
+                <div>
+                    <p id="day">Day</p>
+                </div>
+                <div>
+                    <p id="mouth">Mouth</p>
+                    <hr>
+                    <p id="year">Year</p>
+                </div>
+            </div>
+            <!-- Hour -->
+            <div class="item info-settings">
+                <div class="schedule">
+                    <div class="time">
+                        <p>•</p>
+                        <p id="day-of-week">DD</p>
+                        <p>•</p>
+                    </div>
+                    <div class="time">
+                        <p id="hours">00</p>
+                        <p id="seconds">:</p>
+                        <p id="minutes">00</p>
+                    </div>
+                    <div class="time">
+                        <p>•</p>
+                        <p id="time-of-day">P</p>
+                        <p>•</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Status -->
+            <div class="item info-settings">Status</div>
+            <!-- About me -->
+            <div class="item info-profile about-me">
+                <div class="img-profile">
+                    <img src="assets/img/RumindVisuals.png" alt="RumindVisuals">
+                </div>
+                <div class="personal-info">
+                    <div>
+                        <h1>Erik Ramirez</h1>
+                        <h2>@RumindVisuals</h2>
+                    </div>
+                    <div>
+                        <p id="about-me"><strong>Data Analyst</strong> 🤓📊, <strong>Backend Developer</strong>
+                            👨‍💻 specializing in <strong>Python</strong>, and <strong>Advertiser</strong> 🧑‍🎤🎨.
+                            Currently, I am solidifying my expertise 📚 in the
+                            field of <strong>Data Science</strong> 👨‍🔬📊 and <strong>Programming</strong> 👨💻 to
+                            strengthen my professional trajectory ✨ and
+                            merge 🔗 my branches of knowledge 🧠⚡.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Education -->
+            <a href="/education" class="item info-profile">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon">
+                    <path opacity="1"
+                        d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Learning -->
+            <a href="/learning" class="item info-profile">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon">
+                    <path d="M477.7,247.8c-11.7-14.5-23.2-29.1-34.8-43.8c-6.7-8.5-11.7-17.9-14-28.6c-7.1-34.2-20.2-65.4-44.4-91.3
+                        c-25.1-26.8-54.9-45.5-90.6-54.6c-23.9-6.1-48.2-6.4-72.6-5.6c-23.2,0.8-45.9,4.8-67.5,13.5C105.2,57.2,68,90,44.9,137.6
+                        c-23.8,48.8-27.3,99.3-11.5,151.2C41,313.6,54,335.6,69,356.6c8.8,12.2,12.7,26,12.7,41c-0.1,19.8-0.1,39.5,0.1,59.2
+                        c0,4.2,0.4,8.6,1.7,12.5c4.1,12.8,14.2,19,30.3,19c56.1,0.1,112.2,0.1,168.3,0c4.2,0,8.6-0.2,12.5-1.4
+                        c12.3-3.8,19.2-14.1,19.4-28.4c0.1-9.2,0-18.3,0-28.1h6.5c16.2,0,32.5,0.7,48.7-0.3c9.2-0.5,19-2.1,27.2-5.8
+                        c22.9-10.5,33.3-29.8,33.8-54.5c0.4-18.2,0.1-36.5,0.1-55.6c5.6,0,10.6,0,15.5,0c17.5,0.2,31-7.1,38.6-22.9
+                        C491.7,275.6,488.3,261.1,477.7,247.8z M337,211.1c-10.4,1.9-21.3,1.2-31.9,1.5c-7.2,0.2-14.3,0-22.2,0
+                        c5.2,17.5,1.5,33.1-10.8,45.2c-12.1,11.9-27.5,15.8-45.4,10.4c0,7.2,0.3,13.6-0.1,20c-0.8,15.1-13.1,26.1-28.8,26.1
+                        s-28.1-11-28.9-26.1c-0.3-6.4-0.1-12.8-0.1-20.1c-10.3,3.4-19.6,3-29-0.3c-16.5-5.9-26-17.6-28.6-34.7c-0.9-5.9-2.4-9.9-8.5-13
+                        c-15.6-8-23.8-27.3-20.4-45.2c3.5-18,18.5-32.6,36.4-34.5c4.7-0.5,6.3-1.9,7-6.8c4.4-31.2,35.8-43.4,59.3-34.6c1.7,0.6,3.4,1.4,5,2
+                        c16.5-24.6,53.9-27.2,74.4,0c14.7-7.1,29.4-6.9,43,1.9c6.1,3.9,11,10.2,15.2,16.3c2.6,3.9,4.8,6,9.5,6.6
+                        c19.2,2.2,32.3,12.4,38,31.2C376.7,177.5,365.9,205.8,337,211.1z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Nationality -->
+            <div class="item info-profile">
+                <div class="nationality-content">
+                    <p>🇲🇽</p>
+                </div>
+                <div class="nationality-content">
+                    <p id="nationality">Mexican</p>
+                </div>
+            </div>
+            <!-- Certifications -->
+            <div class="item info-profile">
+                <h3 id="certifications">Certifications</h3>
+            </div>
+            <!-- Technologies -->
+            <div class="item info-profile">
+                <h3 id="technologies">Technologies</h3>
+            </div>
+            <!-- Advertiser -->
+            <div class="item role">
+                <img src="https://media.giphy.com/media/41C55ZzL8M00frDXEM/giphy-downsized.gif" alt="Advertiser"
+                    loading="lazy">
+                <div></div>
+                <h3 id="advertiser">Advertiser</h3>
+            </div>
+            <!-- Backend -->
+            <div class="item role">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWYwanZvZWRva3F3MnRwZmVkaWt3bmhxZHpzNW5ocHVtNG0wZXRpdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fsoCk5kgOcYMM/giphy-downsized-large.gif"
+                    alt="Backend Developer" loading="lazy">
+                <div></div>
+                <h3 id="backend-developer">Backend Developer</h3>
+            </div>
+            <!-- Data Analyst -->
+            <div class="item role">
+                <img src="https://media.giphy.com/media/MXoEoAUeBXapi/giphy.gif" alt="Data Analyst" loading="lazy">
+                <div></div>
+                <h3 id="data-analyst">Data Analyst</h3>
+            </div>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/RumindVisuals" target="_blank" rel="noopener noreferrer"
+                class="item social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon">
+                    <path opacity="1"
+                        d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Github -->
+            <a href="https://github.com/RumindVisuals" target="_blank" rel="noopener noreferrer"
+                class="item social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon">
+                    <path opacity="1"
+                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Kaggle -->
+            <a href="https://www.kaggle.com/RumindVisuals" target="_blank" rel="noopener noreferrer"
+                class="item social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon">
+                    <path opacity="1"
+                        d="M304.2 501.5L158.4 320.3 298.2 185c2.6-2.7 1.7-10.5-5.3-10.5h-69.2c-3.5 0-7 1.8-10.5 5.3L80.9 313.5V7.5q0-7.5-7.5-7.5H21.5Q14 0 14 7.5v497q0 7.5 7.5 7.5h51.9q7.5 0 7.5-7.5v-109l30.8-29.3 110.5 140.6c3 3.5 6.5 5.3 10.5 5.3h66.9q5.3 0 6-3z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Behance -->
+            <a href="https://www.behance.net/RumindVisuals" target="_blank" rel="noopener noreferrer"
+                class="item social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon">
+                    <path opacity="1"
+                        d="M232 237.2c31.8-15.2 48.4-38.2 48.4-74 0-70.6-52.6-87.8-113.3-87.8H0v354.4h171.8c64.4 0 124.9-30.9 124.9-102.9 0-44.5-21.1-77.4-64.7-89.7zM77.9 135.9H151c28.1 0 53.4 7.9 53.4 40.5 0 30.1-19.7 42.2-47.5 42.2h-79v-82.7zm83.3 233.7H77.9V272h84.9c34.3 0 56 14.3 56 50.6 0 35.8-25.9 47-57.6 47zm358.5-240.7H376V94h143.7v34.9zM576 305.2c0-75.9-44.4-139.2-124.9-139.2-78.2 0-131.3 58.8-131.3 135.8 0 79.9 50.3 134.7 131.3 134.7 61.3 0 101-27.6 120.1-86.3H509c-6.7 21.9-34.3 33.5-55.7 33.5-41.3 0-63-24.2-63-65.3h185.1c.3-4.2 .6-8.7 .6-13.2zM390.4 274c2.3-33.7 24.7-54.8 58.5-54.8 35.4 0 53.2 20.8 56.2 54.8H390.4z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/RumindVisuals" target="_blank" rel="noopener noreferrer"
+                class="item social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon">
+                    <path opacity="1"
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/RumindVisuals" target="_blank" rel="noopener noreferrer"
+                class="item social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon">
+                    <path opacity="1"
+                        d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Twitter -->
+            <a href="https://twitter.com/RumindVisuals" target="_blank" rel="noopener noreferrer"
+                class="item social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon">
+                    <path opacity="1"
+                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Spotify -->
+            <a href="https://open.spotify.com/user/31o77ameatzukmwr6spk3d2v4i5y?si=f662543b261944dc" target="_blank"
+                rel="noopener noreferrer" class="item social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon">
+                    <path
+                        d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Email -->
+            <a href="mailto:rumind.visuals@gmail.com" class="item social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon">
+                    <path opacity="1"
+                        d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Services -->
+            <a href="/services" class="item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon">
+                    <path opacity="1"
+                        d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <!-- Resources -->
+            <a href="/resources" class="item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon">
+                    <path
+                        d="M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z" />
+                </svg>
+                <i class="fa-solid fa-link"></i>
+            </a>
+    </main>
+    <div class="noise-effect"></div>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/clock.js"></script>
+</body>
+
+</html>

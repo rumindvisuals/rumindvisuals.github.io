@@ -1,0 +1,38 @@
+{
+    "profile_ES": {
+        "about_me": "<strong>Analista de Datos</strong> 🤓📊, <strong>Desarrollador Backend</strong> 👨‍💻 especializado en <strong>Python</strong> 🐍, y <strong>Publicista</strong> 🧑‍🎤🎨. Actualmente, estoy consolidando mi experiencia 📚 en el campo de la <strong>Ciencia de Datos</strong> 👨‍🔬📊 y la <strong>Programación</strong> 👨💻 para fortalecer mi trayectoria profesional ✨ y mergear 🔗 mis ramas de conocimiento 🧠⚡.",
+        "nationality": "Mexicano",
+        "certifications": "Certificaciones",
+        "technologies": "Tecnologias",
+        "advertiser": "Publicista",
+        "backend_developer": "Desarrollador Backend",
+        "data_analyst": "Analista de Datos"
+    },
+    "profile_EN": {
+        "about_me": "<strong>Data Analyst</strong> 🤓📊, <strong>Backend Developer</strong> 👨‍💻 specializing in <strong>Python</strong>, and <strong>Advertiser</strong> 🧑‍🎤🎨. Currently, I am solidifying my expertise 📚 in the field of <strong>Data Science</strong> 👨‍🔬📊 and <strong>Programming</strong> 👨💻 to strengthen my professional trajectory ✨ and merge 🔗 my branches of knowledge 🧠⚡.",
+        "nationality": "Mexican",
+        "certifications": "Certifications",
+        "technologies": "Technologies",
+        "advertiser": "Advertiser",
+        "backend_developer": "Backend Developer",
+        "data_analyst": "Data Analyst"
+    },
+    "profile_RU": {
+        "about_me": "<strong>Аналитик данных</strong> 🤓📊, <strong>Разработчик бэкэнда</strong> 👨‍💻, специализирующийся на <strong>Python</strong> 🐍, и <strong>Рекламщик</strong> 🧑‍🎤🎨. В настоящее время я закрепляю свои навыки 📚 в области <strong>науки о данных</strong> 👨‍🔬📊 и <strong>программирования</strong> 👨💻, чтобы укрепить свою профессиональную траекторию ✨ и объединить 🔗 свои области знаний 🧠⚡.",
+        "nationality": "Мексиканец",
+        "certifications": "Сертификации",
+        "technologies": "Технологии",
+        "advertiser": "Рекламодатель",
+        "backend_developer": "Разработчик бэкэнда",
+        "data_analyst": "Аналитик данных"
+    },
+    "profile_PT": {
+        "about_me": "<strong>Analista de Dados</strong> 🤓📊, <strong>Desenvolvedor Backend</strong> 👨‍💻 especializado em <strong>Python</strong> 🐍, e <strong>Publicitário</strong> 🧑‍🎤🎨. Atualmente, estou consolidando minha expertise 📚 na área de <strong>Ciência de Dados</strong> 👨‍🔬📊 e <strong>Programação</strong> 👨💻 para fortalecer minha trajetória profissional ✨ e unir 🔗 meus ramos de conhecimento 🧠⚡.",
+        "nationality": "Mexicano",
+        "certifications": "Certificações",
+        "technologies": "Tecnologias",
+        "advertiser": "Anunciante",
+        "backend_developer": "Desenvolvedor Backend",
+        "data_analyst": "Analista de Dados"
+    }
+}

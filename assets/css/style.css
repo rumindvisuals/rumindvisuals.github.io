@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&display=swap");
+
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background: #131313;
+    transition: background ease-in-out 2s;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    color: #131313;
+    color: #ece3ce;
+    font-family: "Nunito", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-weight: 1000;
+    font-size: 4rem;
+    margin: 0;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.noise-effect {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    z-index: 100;
+    background: url(../img/noise.gif) center;
+    pointer-events: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+}
+
+#items {
+    width: 90vw;
+    height: auto;
+    margin: 5vh auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(260px, 1fr));
+    grid-auto-rows: 260px;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.item {
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    position: relative;
+    box-sizing: border-box;
+
+    border-radius: 1rem;
+    background: #4f6f52;
+    transition: background ease-in-out 0.75s;
+}
+
+svg {
+    fill: #273026;
+    transition: ease-in-out 0.75s;
+}
+
+.icon svg {
+    height: 75%;
+}
+
+#mode {
+    transition: ease-in-out 0.75s;
+}
+
+#mode svg {
+    position: absolute;
+    height: 75%;
+    transition: 2s ease-in;
+}
+
+#mode svg:first-child {
+    opacity: 1;
+}
+
+#mode svg:last-child {
+    opacity: 0;
+}
+
+.langs p {
+    font-size: 10em;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#languages {
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#languages p {
+    padding: 0 0.5rem;
+}
+
+#languages p,
+#languages span {
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: inline-block;
+}
+
+.date {
+    overflow: hidden;
+}
+
+.date div {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.date div:first-child {
+    width: 100%;
+    height: 20%;
+    top: 0;
+    background: #273026;
+    position: absolute;
+    border-bottom: 0.5rem solid rgba(18, 18, 18, 0.25);
+}
+
+.date div > p {
+    text-align: center;
+}
+
+#day {
+    margin-top: 15%;
+    font-size: 8rem;
+    font-weight: 900;
+}
+
+#mouth {
+    margin-bottom: 5px;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+#year {
+    margin-top: 5px;
+    letter-spacing: 0.35rem;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+hr {
+    background: inherit;
+}
+
+.schedule {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    align-items: center;
+    background: #131313;
+    border-radius: 2rem;
+}
+
+.time {
+    box-sizing: border-box;
+}
+
+.time p {
+    font-size: 1.5rem;
+    font-family: "Orbitron";
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    transition: color ease-in-out 1s;
+}
+
+.time:nth-child(2) p {
+    font-size: 3rem;
+    font-family: "Orbitron";
+    font-weight: 900;
+}
+
+/* fondo - #131313 */
+/* texto - #ece3ce */
+/* cuadros - #4f6f52 */
+/* svg - #273026 */
+
+.nationality-content p {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.nationality-content:first-child p {
+    font-size: 8rem;
+}
+
+.role {
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.role img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.75;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.role div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    box-sizing: border-box;
+    background: rgba(78, 110, 82, 0.5);
+}
+
+.role h3 {
+    position: relative;
+}
+
+#about-me {
+    line-height: 1.3;
+    text-wrap: pretty;
+    font-size: 1.5rem;
+}
+
+.about-me {
+    overflow: hidden;
+}
+
+.img-profile {
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
+.img-profile img {
+    height: 100%;
+}
+
+.personal-info {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    text-align: start;
+    text-wrap: pretty;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+}
+
+#items {
+    grid-template-areas:
+        "about-me about-me about-me mode"
+        "about-me about-me about-me languages"
+        "nationality status date hour"
+        "certifications certifications education learning"
+        "technologies technologies technologies technologies"
+        "linkedin github kaggle behance"
+        "data-analyst data-analyst data-analyst instagram"
+        "facebook advertiser advertiser advertiser"
+        "backend backend backend twitter"
+        "spotify services resources email";
+}
+
+.item:nth-child(1) {
+    grid-area: mode;
+}
+
+.item:nth-child(2) {
+    grid-area: languages;
+}
+
+.item:nth-child(3) {
+    grid-area: date;
+}
+
+.item:nth-child(4) {
+    grid-area: hour;
+}
+
+.item:nth-child(5) {
+    grid-area: status;
+}
+
+.item:nth-child(6) {
+    grid-area: about-me;
+}
+
+.item:nth-child(7) {
+    grid-area: education;
+}
+
+.item:nth-child(8) {
+    grid-area: learning;
+}
+
+.item:nth-child(9) {
+    grid-area: nationality;
+}
+
+.item:nth-child(10) {
+    grid-area: certifications;
+}
+
+.item:nth-child(11) {
+    grid-area: technologies;
+}
+
+.item:nth-child(12) {
+    grid-area: advertiser;
+}
+
+.item:nth-child(13) {
+    grid-area: backend;
+}
+
+.item:nth-child(14) {
+    grid-area: data-analyst;
+}
+
+.item:nth-child(15) {
+    grid-area: linkedin;
+}
+
+.item:nth-child(16) {
+    grid-area: github;
+}
+
+.item:nth-child(17) {
+    grid-area: kaggle;
+}
+
+.item:nth-child(18) {
+    grid-area: behance;
+}
+
+.item:nth-child(19) {
+    grid-area: instagram;
+}
+
+.item:nth-child(20) {
+    grid-area: facebook;
+}
+
+.item:nth-child(21) {
+    grid-area: twitter;
+}
+
+.item:nth-child(22) {
+    grid-area: spotify;
+}
+
+.item:nth-child(23) {
+    grid-area: email;
+}
+
+.item:nth-child(24) {
+    grid-area: services;
+}
+
+.item:nth-child(25) {
+    grid-area: resources;
+}
+
+.fa-solid {
+    font-size: 1.5rem;
+    color: #4f6f52;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transition: ease-in-out 0.75s;
+}
+
+.item:hover .fa-solid {
+    color: #273026;
+}
+
+.item:hover .icon {
+    scale: 1.1;
+}
