@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "RumindVisuals | 404 Not Found";
+---
+
+<BaseLayout title={pageTitle}>
+    <section>
+        <h2><span>404</span> - Page Not Found</h2>
+        <p>Sorry, the page you are looking for does not exist.</p>
+        <a href="/">Go back to Home</a>
+    </section>
+</BaseLayout>
+
+<script>
+    if (typeof window !== "undefined") {
+        const redirectTarget = "/";
+        setTimeout(() => {
+            window.location.href = redirectTarget;
+        }, 5000);
+    }
+</script>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 span {
+        color: var(--accent-color);
+    }
+
+    p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    a {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: var(--color-primary);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+        background-color: var(--color-primary-dark);
+    }
+</style>

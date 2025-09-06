@@ -1,0 +1,25 @@
+---
+type Link = { href: string; text: string };
+
+const defaultLinks: Link[] = [
+    { href: "/", text: "Home" },
+    { href: "/about", text: "About" },
+    { href: "/blog", text: "Blog" },
+    { href: "/projects", text: "Projects" },
+    { href: "/contact", text: "Contact" },
+];
+
+const { links = defaultLinks }: { links?: Link[] } = Astro.props;
+---
+
+<nav>
+    <ul>
+        {
+            links.map(({ href, text }) => (
+                <li>
+                    <a href={href}>{text}</a>
+                </li>
+            ))
+        }
+    </ul>
+</nav>

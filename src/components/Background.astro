@@ -1,0 +1,25 @@
+---
+const imageDefault = "https://i.giphy.com/YqhIK6Gbor6CLeloBq/giphy.gif";
+const { imageBackground = imageDefault } = Astro.props;
+---
+
+<div
+    class="background"
+    style={`background: url('${imageBackground}') no-repeat center center fixed; background-size: cover; filter: contrast(1.5) brightness(1.5) grayscale(100%); z-index: -90; opacity: 0.3; pointer-events: none;`}
+>
+</div>
+
+<style is:global>
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+        filter: grayscale(100%) brightness(0.5) contrast(1.75);
+        z-index: -90;
+        opacity: 0.3;
+        pointer-events: none;
+    }
+</style>
