@@ -1,0 +1,194 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "RumindVisuals | Home";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <main>
+        <section id="hero">
+            <div class="hero__image-container">
+                <img src="image.jpg" alt="Rumind Visuals" class="hero__image" />
+            </div>
+            <div class="hero__text-container">
+                <div class="intro__titles">
+                    <h2 class="intro__name">Erik Ramirez</h2>
+                    <h2 class="intro__username">@RumindVisuals</h2>
+                </div>
+                <ul class="intro__skills">
+                    <li class="skill">
+                        <a href="#software-developer" class="skill__link"
+                            >Software Developer</a
+                        >
+                    </li>
+                    <li class="skill">
+                        <a href="#data-analyst" class="skill__link"
+                            >Data Analyst</a
+                        >
+                    </li>
+                    <li class="skill">
+                        <a href="#advertising-specialist" class="skill__link"
+                            >Advertising Specialist</a
+                        >
+                    </li>
+                    <li class="skill">
+                        <a href="#photographer" class="skill__link"
+                            >Photographer</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style is:global>
+    footer {
+        display: none;
+    }
+
+    @media (max-width: 800px) {
+        header {
+            display: none;
+        }
+    }
+</style>
+
+<style>
+    main {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    #hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    #hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("https://i.giphy.com/YqhIK6Gbor6CLeloBq/giphy.gif")
+            center/cover no-repeat;
+        filter: grayscale(100%) brightness(0.5) contrast(1.75);
+        opacity: 0.9;
+        z-index: 0;
+    }
+
+    .hero__image {
+        display: none;
+    }
+
+    .hero__text-container {
+        position: relative;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 1.5rem 8rem;
+    }
+
+    .hero__text-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 1.5rem 8rem;
+    }
+
+    .intro__titles,
+    .intro__skills {
+        width: 100%;
+    }
+
+    .intro__titles h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .intro__titles h2:first-child {
+        font-size: 1.5rem;
+        color: var(--accent-color);
+    }
+
+    .intro__titles h2:last-child {
+        font-size: 1rem;
+        color: var(--text-color);
+    }
+
+    .intro__skills {
+        list-style: none;
+        padding: 2rem 0;
+        margin: 0;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .skill__link {
+        text-decoration: none;
+        background-color: var(--background-color);
+        color: var(--accent-color);
+        border: 2px solid var(--accent-color);
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        transition:
+            background-color 0.3s,
+            color 0.3s;
+    }
+
+    .skill__link:hover {
+        background-color: var(--accent-color);
+        color: var(--background-color);
+    }
+
+    @media (min-width: 768px) {
+        .hero__text-container {
+            padding: 6rem 3rem;
+        }
+
+        .intro__titles h2:first-child {
+            font-size: 3.5rem;
+        }
+
+        .intro__titles h2:last-child {
+            font-size: 2rem;
+        }
+
+        .intro__skills {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .hero__text-container {
+            padding: 6rem 6rem;
+        }
+
+        .intro__titles h2:first-child {
+            font-size: 3rem;
+        }
+
+        .intro__titles h2:last-child {
+            font-size: 1.7rem;
+        }
+
+        .intro__skills {
+            width: 40%;
+        }
+    }
+</style>
