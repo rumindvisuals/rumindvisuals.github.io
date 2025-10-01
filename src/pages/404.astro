@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Erik Ramirez | 404";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <main class="error-page">
+        <div class="container error-content">
+            <h2 class="error-title">404</h2>
+            <p class="error-subtitle">Página No Encontrada</p>
+            <p class="error-description">
+                Parece que te has perdido en el ciberespacio. Regresemos a un
+                lugar seguro.
+            </p>
+            <a href="/" class="btn">Volver al Inicio</a>
+        </div>
+    </main>
+</BaseLayout>
+
+<script>
+    if (typeof window !== "undefined") {
+        const redirectTarget = "/";
+        setTimeout(() => {
+            window.location.href = redirectTarget;
+        }, 5000);
+    }
+</script>
+
+<style>
+    .error-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
+        text-align: center;
+        padding: 2rem 2rem 46px;
+        box-sizing: border-box;
+    }
+
+    .error-title {
+        font-family: var(--font-primary);
+        font-size: 8rem;
+        line-height: 1;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: glow-text 4s ease-in-out infinite;
+        margin: 0;
+    }
+
+    .error-subtitle {
+        font-family: var(--font-ui);
+        font-size: 1.8rem;
+        color: var(--color-light);
+        margin: 1rem 0 1.5rem;
+    }
+
+    .error-description {
+        color: var(--color-gray-300);
+        max-width: 400px;
+        margin: 0 auto 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .error-page {
+            padding: 70px 2rem 2rem;
+        }
+        .error-title {
+            font-size: 8rem;
+        }
+        .error-subtitle {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .error-title {
+            font-size: 10rem;
+        }
+    }
+</style>

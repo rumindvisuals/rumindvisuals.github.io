@@ -1,0 +1,991 @@
+---
+import BlogAnimation from "../scripts/BlogAnimation.astro";
+import ContactAnimation from "../scripts/ContactAnimation.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import KaggleIcon from "../components/icons/KaggleIcon.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import InstagramIcon from "../components/icons/InstagramIcon.astro";
+
+const pageTitle = "Inicio | Erik Ramirez";
+const upcomingProjects = Array(8).fill({});
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<main>
+		<section id="hero-section">
+			<div class="container hero-content">
+				<div id="profile-image-container">
+					<img
+						src="./placeholder-profile.png"
+						alt="Foto de perfil de Erik Ramirez"
+						id="profile-img"
+					/>
+				</div>
+				<div class="profile-info">
+					<h2 id="profile-title">Erik Ramirez</h2>
+					<p id="username">@RumindVisuals</p>
+					<div id="skills">
+						<ul>
+							<li class="skill-item">
+								<a href="#advertising-specialist"
+									><h3>Especialista en Publicidad</h3></a
+								>
+							</li>
+							<li class="skill-item">
+								<a href="#photographer"><h3>Fotógrafo</h3></a>
+							</li>
+							<li class="skill-item">
+								<a href="#data-analyst"
+									><h3>Analista de Datos</h3></a
+								>
+							</li>
+							<li class="skill-item">
+								<a href="#software-developer"
+									><h3>Desarrollador de Software</h3></a
+								>
+							</li>
+						</ul>
+					</div>
+					<p id="description">
+						Transformo ideas en soluciones estratégicas, uniendo
+						creatividad, datos y tecnología para maximizar impacto.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="about">
+			<div class="container">
+				<h2 id="about-title" class="section-title">Sobre Mí</h2>
+				<div class="about-summary">
+					<p>
+						Soy un profesional multidisciplinario con una pasión por
+						conectar la creatividad, los datos y la tecnología. Mi
+						enfoque integra la estrategia publicitaria con el
+						análisis de datos, el desarrollo de software y la
+						narrativa visual de la fotografía para construir
+						soluciones completas y de alto impacto.
+					</p>
+				</div>
+				<div class="about-grid">
+					<div class="about-item" id="advertising-specialist">
+						<div class="about-item-img">
+							<img
+								src="https://i0.wp.com/drunkenanimeblog.com/wp-content/uploads/2020/02/anime-soft-drink.gif"
+								alt="Ilustración sobre publicidad digital y estrategia de marca"
+							/>
+						</div>
+						<div class="about-item-info">
+							<h3>Especialista en Publicidad</h3>
+							<p>
+								Diseño y ejecuto campañas publicitarias que
+								capturan la atención. Fusiono la creatividad con
+								el análisis de datos para maximizar el alcance y
+								potenciar la conversión.
+							</p>
+							<a href="/advertising-specialist" class="btn"
+								>Ver más...</a
+							>
+						</div>
+					</div>
+					<div class="about-item" id="data-analyst">
+						<div class="about-item-img">
+							<img
+								src="https://i.pinimg.com/originals/9f/f6/85/9ff6850d7d42d79f7bae79c89eac4d5c.gif"
+								alt="Ilustración de gráficos y análisis de datos"
+							/>
+						</div>
+						<div class="about-item-info">
+							<h3>Analista de Datos</h3>
+							<p>
+								Convierto datos complejos en información clara y
+								accionable. Utilizo herramientas analíticas para
+								descubrir insights que impulsan decisiones
+								estratégicas.
+							</p>
+							<a href="/data-analyst" class="btn">Ver más...</a>
+						</div>
+					</div>
+					<div class="about-item" id="software-developer">
+						<div class="about-item-img">
+							<img
+								src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmloeHF0d2tjMW9vdXB1Ym94djVoN2kyczF2bmxwOTYzazJiY3EybSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fsoCk5kgOcYMM/giphy.gif"
+								alt="Ilustración de código de programación y desarrollo de software"
+							/>
+						</div>
+						<div class="about-item-info">
+							<h3>Desarrollador de Software</h3>
+							<p>
+								Construyo soluciones de software a medida y
+								eficientes. Aplico las últimas tecnologías para
+								crear herramientas que resuelven problemas
+								reales y optimizan procesos.
+							</p>
+							<a href="/software-developer" class="btn"
+								>Ver más...</a
+							>
+						</div>
+					</div>
+					<div class="about-item" id="photographer">
+						<div class="about-item-img">
+							<img
+								src="https://i.pinimg.com/originals/aa/29/c8/aa29c87da305509a8a4aa38ad45fe508.gif"
+								alt="Ilustración de una cámara de fotos y composición fotográfica"
+							/>
+						</div>
+						<div class="about-item-info">
+							<h3>Fotógrafo</h3>
+							<p>
+								A través de mi lente, capturo la esencia de cada
+								momento. Creo imágenes que no solo se ven, sino
+								que cuentan historias y despiertan emociones.
+							</p>
+							<a href="/photographer" class="btn">Ver más...</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="projects">
+			<div class="container">
+				<h2 class="section-title">Proyectos</h2>
+				<div class="projects-carousel-container">
+					<div class="projects-grid">
+						{
+							upcomingProjects.map(() => (
+								<a href="#" class="project-card-link">
+									<div class="project-card upcoming-project">
+										<div class="project-img-container">
+											<img
+												src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
+												alt="Proyecto próximamente"
+											/>
+										</div>
+										<div class="project-info-card">
+											<h3>Próximamente</h3>
+											<p>
+												Este proyecto estará disponible
+												en breve. Mantente atento para
+												verlo pronto.
+											</p>
+											<ul class="project-tags">
+												<li>Próximamente</li>
+												<li>Portafolio</li>
+												<li>En breve</li>
+											</ul>
+										</div>
+									</div>
+								</a>
+							))
+						}
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="blog" aria-labelledby="blog-title">
+			<div class="container">
+				<h2 id="blog-title" class="section-title">Blog</h2>
+				<p class="section-subtitle">Desde el teclado</p>
+				<div class="blog-split-view">
+					<div id="notes-container" class="blog-slider"></div>
+					<div id="code-container" class="blog-slider"></div>
+				</div>
+				<div class="blog-cta-container">
+					<a href="/blog" class="btn">Ir al Blog</a>
+				</div>
+			</div>
+		</section>
+		<section id="contact">
+			<div class="container">
+				<h2 class="section-title">Conectar</h2>
+				<p class="section-subtitle">
+					Construyamos algo increíble juntos.
+				</p>
+				<div class="contact-graph">
+					<div class="node-center">
+						<span class="node-center-initials">ER</span>
+					</div>
+
+					<div class="contact-nodes">
+						<a
+							href="https://linkedin.com/in/rumindvisuals"
+							class="node node-1"
+							target="_blank"
+						>
+							<div class="node-icon">
+								<LinkedInIcon class="icon-svg" />
+							</div>
+						</a>
+						<div class="line line-1"></div>
+
+						<a
+							href="https://github.com/rumindvisuals"
+							class="node node-2"
+							target="_blank"
+						>
+							<div class="node-icon">
+								<GithubIcon class="icon-svg" />
+							</div>
+						</a>
+						<div class="line line-2"></div>
+
+						<a
+							href="https://www.kaggle.com/rumindvisuals"
+							class="node node-3"
+							target="_blank"
+						>
+							<div class="node-icon">
+								<KaggleIcon class="icon-svg" />
+							</div>
+						</a>
+						<div class="line line-3"></div>
+
+						<a
+							href="https://instagram.com/rumindvisuals"
+							class="node node-4"
+							target="_blank"
+						>
+							<div class="node-icon">
+								<InstagramIcon class="icon-svg" />
+							</div>
+						</a>
+						<div class="line line-4"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<ContactAnimation />
+	<BlogAnimation />
+</BaseLayout>
+
+<style is:global>
+	/*
+======================================================
+  SECCIÓN PRINCIPAL (HERO)
+======================================================
+*/
+	#hero-section {
+		padding: 5rem 0;
+		min-height: 100dvh;
+		display: flex;
+		align-items: center;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 3rem;
+	}
+
+	#profile-image-container {
+		width: 250px;
+		height: 250px;
+		border-radius: 50%;
+		position: relative;
+		overflow: hidden;
+		animation: glow 3s ease-in-out infinite;
+		flex-shrink: 0;
+	}
+
+	#profile-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+
+	#profile-title {
+		font-family: var(--font-primary);
+		font-size: 2rem;
+		background: var(--gradient-primary);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: glow-text 3s ease-in-out infinite;
+	}
+
+	#username {
+		font-family: var(--font-ui);
+		font-size: 1.5rem;
+		color: var(--color-primary-light);
+		margin-top: 0.5rem;
+		letter-spacing: 1px;
+	}
+
+	#description {
+		font-size: 1rem;
+		color: var(--color-gray-300);
+		margin-top: 1.5rem;
+		max-width: 500px;
+	}
+
+	#skills {
+		max-width: 640px;
+		margin-top: 2rem;
+	}
+
+	#skills ul {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		justify-content: center;
+	}
+
+	.skill-item {
+		font-family: var(--font-ui);
+		background: rgba(255, 255, 255, 0.05);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		padding: 0.12rem 0.5rem;
+		border-radius: 50px;
+		border: var(--border-glass);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+		color: var(--color-gray-100);
+		font-size: 0.65rem;
+		transition: all 0.3s ease;
+		min-width: 45%;
+		text-align: center;
+		margin-bottom: 0.2rem;
+	}
+
+	.skill-item a {
+		color: inherit;
+		text-decoration: none;
+		display: block;
+	}
+
+	.skill-item:hover {
+		background: var(--gradient-primary);
+		border-color: var(--color-primary-light);
+		transform: translateY(-3px) scale(1.05);
+		box-shadow: 0 4px 15px rgba(229, 9, 20, 0.5);
+		color: var(--color-gray-900);
+		font-weight: bold;
+	}
+
+	/*
+======================================================
+  ACERCA DE MÍ
+======================================================
+*/
+	.about-summary {
+		max-width: 700px;
+		margin: 0 auto 3rem;
+		text-align: center;
+		color: var(--color-gray-300);
+		font-size: 1.1rem;
+	}
+
+	.about-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	#about .container {
+		padding: 0.5rem 1rem;
+	}
+
+	.about-item {
+		display: flex;
+		flex-direction: column;
+		background: var(--color-gray-900);
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: var(--shadow-subtle);
+		max-width: 600px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.about-item-info {
+		padding: 1.5rem;
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		gap: 1rem;
+	}
+
+	.about-item-img,
+	.about-item-info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.about-item-img {
+		height: 250px;
+		width: 100%;
+	}
+
+	.about-item-img img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: grayscale(100%) contrast(1.2);
+		user-select: none;
+	}
+
+	.about-item:hover .about-item-img img,
+	.about-item:target .about-item-img img {
+		animation: grayscalePulse 3s ease-in-out infinite;
+	}
+
+	.about-item-info h3 {
+		font-family: var(--font-primary);
+		font-size: 1rem;
+		color: var(--color-primary);
+		background: var(--gradient-primary);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: glow-text 3s ease-in-out infinite;
+	}
+
+	.about-item-info {
+		text-align: left;
+	}
+
+	.about-item-info .btn {
+		margin-top: auto;
+		align-self: center;
+	}
+
+	/*
+======================================================
+  PROYECTOS
+======================================================
+*/
+	#projects {
+		padding: 2rem 0;
+	}
+
+	.projects-carousel-container {
+		position: relative;
+		overflow: hidden;
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 15%,
+			black 85%,
+			transparent
+		);
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 15%,
+			black 85%,
+			transparent
+		);
+	}
+
+	.projects-grid {
+		display: flex;
+		gap: 1rem;
+		width: max-content;
+		padding: 3rem 0;
+		animation: scroll 60s linear infinite;
+	}
+
+	.projects-carousel-container:hover .projects-grid {
+		animation-play-state: paused;
+	}
+
+	.project-card-link {
+		display: block;
+		color: inherit;
+	}
+
+	.project-card {
+		flex-shrink: 0;
+		width: 250px;
+		background: var(--color-gray-900);
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: var(--shadow-subtle);
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		transform: scale(0.9);
+		transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+		animation: glow 3s ease-in-out infinite;
+		cursor: pointer;
+	}
+
+	.project-card-link:hover .project-card {
+		transform: scale(1);
+		z-index: 3;
+	}
+
+	.project-img-container {
+		width: 100%;
+		height: 150px;
+	}
+
+	.project-img-container img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.project-info-card {
+		padding: 1.2rem;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		gap: 1rem;
+	}
+
+	.project-info-card h3 {
+		font-family: var(--font-primary);
+		color: var(--color-primary-light);
+		margin-bottom: 0.5rem;
+	}
+
+	.project-tags {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: auto;
+	}
+
+	.project-tags li {
+		font-size: 0.75rem;
+		background: rgba(255, 255, 255, 0.05);
+		padding: 0.2rem 0.6rem;
+		border-radius: 50px;
+		border: var(--border-glass);
+		color: var(--color-gray-300);
+	}
+
+	/*
+======================================================
+  BLOG (WIP)
+======================================================
+*/
+	.blog-split-view {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		max-width: 1100px;
+		margin: 2rem auto;
+	}
+
+	.blog-slider {
+		position: relative;
+		overflow: hidden;
+		flex: 1;
+	}
+
+	.note-panel,
+	.code-panel {
+		position: relative;
+		height: 450px;
+	}
+
+	.note-panel.entering,
+	.code-panel.entering {
+		animation: slide-in-from-bottom 0.8s cubic-bezier(0.25, 1, 0.5, 1)
+			forwards;
+	}
+
+	.note-panel.exiting,
+	.code-panel.exiting {
+		animation: slide-out-to-top 0.8s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+	}
+
+	.blog-window-header {
+		display: flex;
+		align-items: center;
+		padding: 0.75rem;
+		background: #333;
+		border-bottom: 1px solid #444;
+		flex-shrink: 0;
+		border-radius: 15px 15px 0 0;
+	}
+
+	.note-panel {
+		color: var(--color-gray-300);
+		font-family: var(--font-body);
+		background: #202020;
+		border-radius: 15px;
+		box-shadow: var(--shadow-subtle);
+		border: var(--border-glass);
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	.code-panel {
+		background: #1e1e1e;
+		border-radius: 15px;
+		box-shadow: var(--shadow-subtle);
+		border: var(--border-glass);
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.note-body {
+		font-size: 0.9rem;
+		line-height: 1.6;
+		white-space: pre-wrap;
+		padding: 1.5rem;
+		overflow-y: auto;
+		flex-grow: 1;
+	}
+	.controls {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.control {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+	}
+	.control.close {
+		background-color: #ff5f56;
+	}
+	.control.min {
+		background-color: #ffbd2e;
+	}
+	.control.max {
+		background-color: #27c93f;
+	}
+
+	.editor-title {
+		color: #ccc;
+		font-family: var(--font-ui);
+		font-size: 0.8rem;
+		margin: 0 auto;
+		transform: translateX(-18px);
+	}
+
+	.code-editor-body {
+		padding: 1.5rem;
+		font-family: "Fira Code", "Courier New", Courier, monospace;
+		font-size: 0.9rem;
+		color: #d4d4d4;
+		white-space: pre-wrap;
+		overflow: hidden;
+		flex-grow: 1;
+	}
+
+	.blog-cta-container {
+		text-align: center;
+		margin: 3rem;
+	}
+
+	.code-editor-body code::after {
+		content: "▋";
+		animation: blink 1s step-end infinite;
+		color: var(--color-primary-light);
+	}
+
+	#contact {
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.contact-graph {
+		position: relative;
+		display: flex;
+		width: 300px;
+		height: 300px;
+		justify-content: center;
+		align-items: center;
+		margin: 3rem auto 0;
+	}
+
+	.node-center {
+		width: 110px;
+		height: 110px;
+		border-radius: 50%;
+		position: relative;
+		z-index: 2;
+		border: 2px solid var(--color-primary);
+		animation: glow 4s ease-in-out infinite;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: var(--color-gray-900);
+	}
+
+	.node-center-initials {
+		font-family: var(--font-primary);
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--color-primary-light);
+		text-shadow: 0 0 15px var(--color-primary-light);
+		animation: glow-text 3s ease-in-out infinite;
+		user-select: none;
+	}
+
+	.contact-nodes {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.node {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 45px;
+		height: 45px;
+		transform: translate(-50%, -50%) rotate(var(--angle))
+			translateX(var(--distance)) rotate(calc(-1 * var(--angle)));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		color: var(--color-gray-300);
+		background: var(--color-gray-900);
+		border-radius: 50%;
+		border: var(--border-glass);
+		transition: all 0.4s ease;
+	}
+	.node {
+		z-index: 3;
+	}
+
+	.node-1,
+	.line-1 {
+		--angle: 45deg;
+		--distance: 120px;
+	}
+	.node-2,
+	.line-2 {
+		--angle: 135deg;
+		--distance: 120px;
+	}
+	.node-3,
+	.line-3 {
+		--angle: 225deg;
+		--distance: 120px;
+	}
+	.node-4,
+	.line-4 {
+		--angle: 315deg;
+		--distance: 120px;
+	}
+
+	.node-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.line {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: var(--distance);
+		height: 2px;
+		background: linear-gradient(to left, var(--color-primary), transparent);
+		transform-origin: left center;
+		transform: translateY(-50%) rotate(var(--angle));
+		z-index: 1;
+		opacity: 0.5;
+		transition: opacity 0.4s ease;
+	}
+
+	.node-icon svg {
+		width: 24px;
+		height: 24px;
+		fill: currentColor;
+	}
+
+	.node:hover,
+	.node.lit {
+		background: var(--color-primary);
+		transform: translate(-50%, -50%) rotate(var(--angle))
+			translateX(var(--distance)) rotate(calc(-1 * var(--angle)))
+			scale(1.1);
+		box-shadow: 0 0 15px var(--color-primary-light);
+		color: var(--color-light);
+	}
+
+	.contact-nodes:has(.node:hover) .line,
+	.contact-nodes:has(.node.lit) .line {
+		opacity: 0.2;
+	}
+
+	.node:hover + .line,
+	.node-1:hover ~ .line-1,
+	.node-2:hover ~ .line-2,
+	.node-3:hover ~ .line-3,
+	.node-4:hover ~ .line-4,
+	.node.lit + .line,
+	.node-1.lit ~ .line-1,
+	.node-2.lit ~ .line-2,
+	.node-3.lit ~ .line-3,
+	.node-4.lit ~ .line-4 {
+		opacity: 1;
+	}
+
+	/*
+======================================================
+  MEDIA QUERIES
+======================================================
+*/
+	@media (min-width: 768px) {
+		#hero-section {
+			margin-bottom: 3rem;
+			padding: 5rem 0;
+		}
+
+		#profile-image-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.hero-content {
+			flex-direction: row;
+			text-align: left;
+			align-items: center;
+			justify-content: center;
+			gap: 5rem;
+		}
+
+		.profile-info {
+			max-width: 500px;
+		}
+
+		#skills ul {
+			justify-content: flex-start;
+			padding: 0;
+		}
+
+		.about-grid {
+			gap: 4rem;
+		}
+
+		#about .container {
+			padding: 2rem 1rem;
+		}
+
+		.about-item {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			max-width: 800px;
+			gap: 0;
+		}
+
+		.about-item:nth-of-type(even) .about-item-img {
+			grid-column: 2;
+			grid-row: 1;
+		}
+
+		.about-item-img {
+			height: 100%;
+			min-height: 250px;
+		}
+
+		.about-item-info .btn {
+			align-self: flex-end;
+		}
+
+		.projects-grid {
+			gap: 2rem;
+			padding: 3rem 0;
+		}
+
+		.blog-split-view {
+			flex-direction: row;
+			gap: 1rem;
+		}
+
+		.blog-slider {
+			height: 450px;
+		}
+
+		.note-panel,
+		.code-panel {
+			height: 100%;
+		}
+
+		.project-card {
+			width: 280px;
+		}
+
+		.contact-graph {
+			width: 350px;
+			height: 350px;
+		}
+
+		.node-center {
+			width: 140px;
+			height: 140px;
+		}
+
+		.node-center-initials {
+			font-size: 3rem;
+		}
+
+		.node-1,
+		.line-1,
+		.node-2,
+		.line-2,
+		.node-3,
+		.line-3,
+		.node-4,
+		.line-4 {
+			--distance: 160px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		#profile-image-container {
+			width: 350px;
+			height: 350px;
+		}
+
+		.hero-content {
+			gap: 8rem;
+		}
+
+		.profile-info {
+			max-width: 600px;
+		}
+
+		#profile-title {
+			font-size: 3rem;
+		}
+
+		#username {
+			font-size: 2rem;
+		}
+
+		#description {
+			font-size: 1.2rem;
+		}
+
+		.about-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
+			max-width: 1200px;
+		}
+
+		.about-item {
+			max-width: none;
+		}
+	}
+</style>

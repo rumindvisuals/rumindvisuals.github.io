@@ -1,0 +1,126 @@
+---
+
+---
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const notesContainer = document.getElementById("notes-container");
+        const codeContainer = document.getElementById("code-container");
+
+        if (!notesContainer || !codeContainer) return;
+
+        const slidesData = [
+            {
+                lang: "Python",
+                note: `## Decoradores y Metaprogramación\n\n- **Funciones de Orden Superior:** Los decoradores son funciones que modifican o envuelven a otras funciones.\n- **Sintaxis Azucarada:** El uso de \`@decorator\` simplifica la sintaxis \`my_func = decorator(my_func)\`.\n- **Casos de Uso:** Logging, control de acceso, caching, y validación de argumentos.`,
+                code: `import time\n\ndef performance_logger(func):\n    def wrapper(*args, **kwargs):\n        start_time = time.time()\n        result = func(*args, **kwargs)\n        end_time = time.time()\n        print(f"{func.__name__} tardó {end_time - start_time:.2f}s")\n        return result\n    return wrapper\n\n@performance_logger\ndef process_data(data):\n    # ...`,
+            },
+            {
+                lang: "JavaScript",
+                note: `## Custom Hooks y Memoización\n\n- **Lógica Reutilizable:** Los Custom Hooks permiten extraer y compartir lógica de estado entre componentes.\n- **Optimización:** \`useCallback\` y \`useMemo\` son cruciales para evitar re-renderizados innecesarios, memorizando funciones y valores.\n- **Reglas de Hooks:** Solo se pueden llamar en el nivel superior de un componente funcional.`,
+                code: `import { useState, useCallback } from 'react';\n\nfunction useToggle(initialState = false) {\n  const [state, setState] = useState(initialState);\n\n  const toggle = useCallback(() => {\n    setState(prevState => !prevState);\n  }, []);\n\n  return [state, toggle];\n}`,
+            },
+            {
+                lang: "SQL",
+                note: `## Funciones de Ventana (Window Functions)\n\n- **Cálculos sobre Conjuntos:** Permiten realizar cálculos sobre un conjunto de filas relacionadas con la fila actual.\n- **Sin Agrupar:** A diferencia de \`GROUP BY\`, no colapsan las filas, manteniendo el detalle original.\n- **Potencia Analítica:** Ideales para rankings, series temporales y cálculos de promedios móviles.`,
+                code: `SELECT\n    employee_name,\n    department,\n    salary,\n    RANK() OVER (PARTITION BY department ORDER BY salary DESC) as rank_in_department\nFROM employees;`,
+            },
+            {
+                lang: "Rust",
+                note: `## Ownership y Borrowing\n\n- **Garantía de Seguridad:** El sistema de ownership previene errores de memoria (como null pointers o data races) en tiempo de compilación.\n- **Reglas Clave:** Cada valor tiene un único 'owner'. Cuando el owner sale del scope, el valor se libera.\n- **Préstamos (Borrowing):** Se puede prestar una referencia inmutable (\`&T\`) o mutable (\`&mut T\`), pero no ambas a la vez.`,
+                code: `fn main() {\n    let s1 = String::from("hello");\n    let s2 = s1; // s1 se mueve a s2\n\n    // println!("{}, world!", s1); // Error: s1 ya no es válido\n\n    takes_ownership(s2);\n}\n\nfn takes_ownership(some_string: String) {\n    println!("{}", some_string);\n} // some_string se libera aquí`,
+            },
+            {
+                lang: "Bash",
+                note: `## Scripting Avanzado en Bash\n\n- **Funciones y Scope:** Las funciones permiten modularizar el código. Las variables son globales por defecto, usar \`local\` para scope de función.\n- **Manejo de Errores:** Usar \`set -e\` para salir si un comando falla. \`trap\` permite ejecutar código al recibir señales (ej. EXIT, INT).\n- **Expansión de Parámetros:** Utilizar \`\${VAR:-default}\` para valores por defecto o \`\${VAR:?error}\` para validaciones.`,
+                code: `#!/bin/bash\n\nset -e\n\ncleanup() {\n    echo "Limpiando archivos temporales..."\n    # rm -f /tmp/temp_file\n}\n\ntrap cleanup EXIT\n\nmain() {\n    local name="\${1:-Mundo}"\n    echo "Hola, \$name"\n}\n\nmain "$@"`,
+            },
+        ];
+
+        let currentSlideIndex = 0;
+
+        function typeEffect(element, text, speed, onComplete) {
+            let i = 0;
+            element.innerHTML = "";
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                } else if (onComplete) {
+                    onComplete();
+                }
+                setTimeout(type, speed);
+            }
+            type();
+        }
+
+        function createNotePanel(slideData) {
+            const notePanel = document.createElement("div");
+            notePanel.className = "note-panel";
+            const noteHeader = document.createElement("div");
+            noteHeader.className = "blog-window-header";
+            noteHeader.innerHTML = `<div class="controls"><span class="control close"></span><span class="control min"></span><span class="control max"></span></div><div class="editor-title">notas/${slideData.lang.toLowerCase()}.md</div>`;
+            const noteBody = document.createElement("div");
+            noteBody.className = "note-body";
+            noteBody.textContent = slideData.note;
+            notePanel.append(noteHeader, noteBody);
+            return notePanel;
+        }
+
+        function createCodePanel(slideData) {
+            const codePanel = document.createElement("div");
+            codePanel.className = "code-panel";
+            const codeHeader = document.createElement("div");
+            codeHeader.className = "blog-window-header";
+
+            const langExtensions = {
+                Python: "py",
+                JavaScript: "js",
+                SQL: "sql",
+                Rust: "rs",
+                Bash: "sh",
+            };
+            const extension = langExtensions[slideData.lang] || "txt";
+
+            codeHeader.innerHTML = `<div class="controls"><span class="control close"></span><span class="control min"></span><span class="control max"></span></div><div class="editor-title">main.${extension}</div>`;
+            const pre = document.createElement("pre");
+            pre.className = "code-editor-body";
+            const codeElement = document.createElement("code");
+            pre.appendChild(codeElement);
+            codePanel.append(codeHeader, pre);
+
+            typeEffect(codeElement, slideData.code, 25);
+
+            return codePanel;
+        }
+
+        function showNextSlide() {
+            const oldPanels = document.querySelectorAll(
+                ".note-panel, .code-panel",
+            );
+            oldPanels.forEach((panel) => {
+                panel.classList.add("exiting");
+                panel.addEventListener("animationend", () => panel.remove(), {
+                    once: true,
+                });
+            });
+
+            const slideData = slidesData[currentSlideIndex];
+
+            const notePanel = createNotePanel(slideData);
+            const codePanel = createCodePanel(slideData);
+
+            notePanel.classList.add("entering");
+            codePanel.classList.add("entering");
+
+            notesContainer.appendChild(notePanel);
+            codeContainer.appendChild(codePanel);
+
+            currentSlideIndex = (currentSlideIndex + 1) % slidesData.length;
+
+            setTimeout(showNextSlide, 15000);
+        }
+
+        showNextSlide();
+    });
+</script>

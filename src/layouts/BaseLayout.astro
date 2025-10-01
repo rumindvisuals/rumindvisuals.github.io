@@ -1,0 +1,35 @@
+---
+import "../styles/normalize.css";
+import "../styles/global.css";
+import "../styles/animations.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { pageTitle } = Astro.props;
+---
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+        <meta name="description" content="Portfolio de Erik Ramirez" />
+        <meta
+            name="keywords"
+            content="Erik Ramirez, portfolio, branding, identidad corporativa, marketing digital, publicidad, creatividad, innovación, desarrollo de software, análisis de datos, fotografía"
+        />
+        <meta name="theme-color" content="#e50914" />
+        <meta name="author" content="Erik Ramirez" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&family=Inter:wght@400;500;700&family=Orbitron:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <Header />
+        <slot />
+        <Footer />
+    </body>
+</html>

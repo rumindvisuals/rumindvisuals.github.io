@@ -1,0 +1,59 @@
+/* Animación de brillo para elementos */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px var(--color-primary), 0 0 50px var(--color-primary-light);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+    }
+}
+
+/* Animación de brillo para texto */
+@keyframes glow-text {
+    0% { text-shadow: 0 0 10px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.2); }
+    50% { text-shadow: 0 0 25px var(--color-primary-light), 0 0 50px var(--color-primary); }
+    100% { text-shadow: 0 0 10px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.2); }
+}
+
+/* Animación de pulso en escala de grises para imágenes */
+@keyframes grayscalePulse {
+    0% {
+        filter: grayscale(100%) contrast(1.2);
+    }
+    50% {
+        filter: grayscale(0%) contrast(1.2);
+    }
+    100% {
+        filter: grayscale(100%) contrast(1.2);
+    }
+}
+
+/* Animación de desplazamiento para el carrusel */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Animación de parpadeo para el cursor del editor de código */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Animación de entrada para los paneles del blog */
+@keyframes slide-in-from-bottom {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Animación de salida para los paneles del blog */
+@keyframes slide-out-to-top {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-100%); opacity: 0; }
+}

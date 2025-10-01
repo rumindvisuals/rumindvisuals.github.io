@@ -1,0 +1,32 @@
+---
+
+---
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const contactNodes = document.querySelectorAll("#contact .node");
+        if (contactNodes.length === 0) return;
+
+        let currentlyLitNode = null;
+
+        function lightUpRandomNode() {
+            // Apagar el nodo anteriormente encendido
+            if (currentlyLitNode) {
+                currentlyLitNode.classList.remove("lit");
+            }
+
+            // Seleccionar un nuevo nodo al azar
+            const randomIndex = Math.floor(Math.random() * contactNodes.length);
+            const randomNode = contactNodes[randomIndex];
+
+            // Encender el nuevo nodo
+            randomNode.classList.add("lit");
+            currentlyLitNode = randomNode;
+        }
+
+        // Iniciar la animación
+        // Se enciende uno inmediatamente y luego se repite cada 2.5 segundos
+        lightUpRandomNode();
+        setInterval(lightUpRandomNode, 1500);
+    });
+</script>

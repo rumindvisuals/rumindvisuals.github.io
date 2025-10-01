@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import KaggleIcon from "../components/icons/KaggleIcon.astro";
+import InstagramIcon from "../components/icons/InstagramIcon.astro";
+---
+
+<BaseLayout>
+    <main class="social-page">
+        <div class="social-container">
+            <header class="social-profile">
+                <div class="social-pfp-container">
+                    <img
+                        src="/placeholder-profile.png"
+                        alt="Foto de perfil de Erik Ramirez"
+                        class="social-pfp"
+                    />
+                </div>
+                <h1 class="social-name">Erik Ramirez</h1>
+                <p class="social-username">@RumindVisuals</p>
+                <p class="social-bio">
+                    Conectando creatividad, datos y tecnología. Especialista en
+                    Publicidad, Analista de Datos, Desarrollador y Fotógrafo.
+                </p>
+            </header>
+
+            <div class="social-links">
+                <a
+                    href="https://linkedin.com/in/rumindvisuals"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <LinkedInIcon class="social-icon" />
+                    <span>LinkedIn</span>
+                </a>
+                <a
+                    href="https://github.com/rumindvisuals"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <GithubIcon class="social-icon" />
+                    <span>GitHub</span>
+                </a>
+                <a
+                    href="https://www.kaggle.com/rumindvisuals"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <KaggleIcon class="social-icon" />
+                    <span>Kaggle</span>
+                </a>
+                <a
+                    href="https://instagram.com/rumindvisuals"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <InstagramIcon class="social-icon" />
+                    <span>Instagram</span>
+                </a>
+                <a href="/#blog" class="social-link">
+                    <span>Visitar Blog</span>
+                </a>
+            </div>
+        </div>
+    </main>
+</BaseLayout>
+
+<style>
+    .social-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
+        box-sizing: border-box;
+        padding: 3rem 1.5rem 70px;
+    }
+
+    .social-container {
+        width: 100%;
+        max-width: 680px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .social-profile {
+        text-align: center;
+    }
+
+    .social-pfp-container {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        animation: glow 4s ease-in-out infinite;
+    }
+
+    .social-pfp {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .social-name {
+        font-family: var(--font-primary);
+        font-size: 2rem;
+        color: var(--color-light);
+    }
+
+    .social-username {
+        font-family: var(--font-ui);
+        color: var(--color-primary-light);
+        margin-bottom: 1rem;
+    }
+
+    .social-bio {
+        color: var(--color-gray-300);
+        font-size: 0.95rem;
+    }
+
+    .social-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: var(--border-glass);
+        border-radius: 12px;
+        font-family: var(--font-ui);
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--color-light);
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .social-link:hover {
+        background: var(--color-primary);
+        transform: scale(1.03);
+        box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .social-link[href*="kaggle.com"] .social-icon {
+        transform: scale(1.2);
+    }
+
+    @media (min-width: 768px) {
+        .social-page {
+            padding: 100px 1.5rem 3rem;
+        }
+
+        .social-pfp-container {
+            width: 150px;
+            height: 150px;
+        }
+
+        .social-name {
+            font-size: 2.5rem;
+        }
+    }
+</style>

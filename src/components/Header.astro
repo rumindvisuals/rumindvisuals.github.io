@@ -1,0 +1,273 @@
+---
+import HomeIcon from "./icons/Home.astro";
+import AboutIcon from "./icons/About.astro";
+import ProjectsIcon from "./icons/Projects.astro";
+import BlogIcon from "./icons/Blog.astro";
+import ContactIcon from "./icons/Contact.astro";
+---
+
+<header id="main-header">
+    <div class="container">
+        <div id="logo">
+            <a href="/"><h1>Erik Ramirez</h1></a>
+        </div>
+        <nav id="main-nav" role="navigation">
+            <ul>
+                <li>
+                    <a href="/" class="nav-item">
+                        <HomeIcon>
+                            <title>Inicio</title>
+                        </HomeIcon>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/#about" class="nav-item">
+                        <AboutIcon>
+                            <title>Sobre Mí</title>
+                        </AboutIcon>
+                        <span>Sobre Mi</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/#projects" class="nav-item">
+                        <ProjectsIcon>
+                            <title>Proyectos</title>
+                        </ProjectsIcon>
+                        <span>Proyectos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog" class="nav-item">
+                        <BlogIcon>
+                            <title>Blog</title>
+                        </BlogIcon>
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/#contact" class="nav-item">
+                        <ContactIcon>
+                            <title>Contacto</title>
+                        </ContactIcon>
+                        <span>Contacto</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style is:global>
+    #main-header {
+        width: 100%;
+        height: 46px;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
+        background-color: var(--color-secondary);
+        border-top: 0.3rem solid var(--color-primary);
+    }
+
+    #main-header .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    #main-nav {
+        width: 100%;
+        height: 100%;
+    }
+
+    #main-nav ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #main-nav ul li {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+    }
+
+    .nav-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-decoration: none;
+        color: var(--color-primary);
+        font-size: 0.75rem;
+        font-weight: 500;
+        transition:
+            color 0.3s,
+            bottom 0.3s;
+        cursor: pointer;
+        box-sizing: border-box;
+        position: relative;
+        bottom: 0.8rem;
+        z-index: 101;
+        background: none;
+        border: none;
+    }
+
+    .nav-item:hover {
+        color: var(--color-primary-light);
+        bottom: 0.25rem;
+    }
+
+    .nav-item svg {
+        width: 2.8rem;
+        height: 2.8rem;
+        margin-bottom: 0.2rem;
+        border-radius: 50%;
+        border: 0.2rem solid var(--color-primary);
+        background-color: var(--color-secondary);
+        box-sizing: border-box;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+        display: block;
+        object-fit: cover;
+        position: relative;
+        z-index: 102;
+        transition:
+            transform 0.3s,
+            background-color 0.3s,
+            border-color 0.3s;
+        padding: 0.5rem;
+    }
+
+    .nav-item:hover svg {
+        transform: scale(1.1);
+        background-color: var(--color-primary);
+        color: var(--color-secondary);
+        border-color: var(--color-primary);
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+    .nav-item:hover span {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--color-primary);
+        margin-top: 0.2rem;
+    }
+
+    @media (min-width: 768px) {
+        #main-header {
+            bottom: auto;
+            top: 0;
+            height: 70px;
+            padding: 0 2rem;
+            border-top: none;
+            border-bottom: 2px solid transparent;
+            border-image: var(--gradient-primary);
+            border-image-slice: 1;
+            background: rgba(19, 19, 19, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        #logo {
+            display: block;
+        }
+
+        #logo a {
+            color: var(--color-primary-light);
+            text-shadow: 0 0 8px var(--color-primary-light);
+            text-decoration: none;
+        }
+
+        #logo h1 {
+            display: inline;
+            font-size: 1.5rem;
+            font-family: var(--font-primary);
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        #main-nav ul {
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        #main-nav ul li {
+            width: auto;
+            height: auto;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+            flex-direction: row;
+            font-size: 1rem;
+            font-family: var(--font-ui);
+            color: var(--color-gray-300);
+            padding-bottom: 5px;
+            bottom: auto;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .nav-item:hover {
+            color: var(--color-primary-light);
+            text-shadow: 0 0 8px var(--color-primary-light);
+        }
+
+        .nav-item:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-item svg {
+            display: none;
+        }
+
+        .nav-item span {
+            display: block;
+        }
+
+        .nav-item:hover span {
+            font-size: inherit;
+            color: inherit;
+        }
+    }
+</style>
